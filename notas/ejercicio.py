@@ -20,7 +20,7 @@ def leer_archivo(nombre_archivo, separador):
     largo = len(lineas)
     i = 0
     while i < largo:
-      linea = lineas[i]
+      linea = lineas[i].strip()
       linea_separada = linea.split(separador)
       contenido_archivo.append(linea_separada)
       i += 1
@@ -37,7 +37,7 @@ def escribir_resultados(resultados, puntaje, nota):
     i = 0
     while i < largo:
       resultado = resultados[i]
-      archivo.write(resultado[0] + ":" + resultado[1].strip() + "->" + resultado[2] + "\n")
+      archivo.write(resultado[0] + ":" + resultado[1] + "->" + resultado[2] + "\n")
       i += 1
     archivo.write("\nPuntaje obtenido: " + str(puntaje) + " / 100\n")
     archivo.write("Nota obtenida: " + str(nota))
@@ -56,7 +56,7 @@ def calcular_resultados(respuestas_estudiante, respuestas_correctas):
     estudiante = respuestas_estudiante[i]
     correcta = respuestas_correctas[i]
     resultado = "INCORRECTA"
-    if estudiante[1].strip() == correcta[1].strip():
+    if estudiante[1] == correcta[1]:
       resultado = "CORRECTA"
       puntaje += int(correcta[2])
     lista_resultado = [estudiante[0], estudiante[1], resultado]

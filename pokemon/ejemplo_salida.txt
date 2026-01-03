@@ -1,0 +1,6 @@
+Generacion 1: 36
+Generacion 2: 23
+Generacion 3: 49
+Generacion 4: 47
+Generacion 5: 50
+Generacion 6: 29
